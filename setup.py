@@ -21,6 +21,7 @@ setup(
     long_description_content_type="text/markdown",
     license="MIT",
     packages=find_packages(),
+    package_data={"": ["py.typed"]},
     install_requires=requirements(),
     python_requires=">=3.9,<3.14",
     include_package_data=False,
