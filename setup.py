@@ -21,12 +21,12 @@ def requirements():
 
 
 setup(
-    name="polygon-geohasher",
+    name="polygon-geohasher-2",
     version=get_version(),
-    author="Alberto Bonsanto",
+    author="Alberto Bonsanto; maintained by Jon Duckworth",
     author_email="",
-    url="https://github.com/Bonsanto/polygon-geohasher",
-    description="Wrapper over Shapely that returns the set of geohashes that form a Polygon",
+    url="https://github.com/duckontheweb/polygon-geohasher",
+    description="""Wrapper over Shapely that returns the set of geohashes that form a Polygon.""",
     long_description=readme(),
     license="MIT",
     packages=find_packages(),

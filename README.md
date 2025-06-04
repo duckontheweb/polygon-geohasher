@@ -1,4 +1,17 @@
-# polygon-geohasher
+# polygon-geohasher-2
+
+> [!NOTE]
+> This is a minimally maintained fork of the original
+> [Bonsanto/polygon-geohasher](https://github.com/Bonsanto/polygon-geohasher) repo, which does not appear to be
+> actively maintained.
+>
+> The original project is published to PyPi under the package name `polygon-geohasher`; *this* project is published
+> under the package name `polygon-geohasher-2`. My goal is to provide a stable package that works with all actively
+> maintained Python versions (those with a status of `bugfix` or `security`
+> [here](https://devguide.python.org/versions/)). I will likely *not* implement any feature enhancements, but
+> contributions are welcome!
+
+
 Polygon Geohasher is an open source Python package for converting Shapely's
 polygons into a set of geohashes. It obtains the set of geohashes
 inside a polygon or geohashes that touch (intersect) the polygon. This library uses
@@ -16,7 +29,7 @@ Polygon Geohasher requires:
 Linux users can get Polygon Geohasher from the Python Package Index with
 pip (8+):
 
-`$ pip install polygon-geohasher`
+`$ pip install polygon-geohasher-2`
 
 ## Usage
 Here are some simple examples:
