@@ -15,7 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        # Test against both major version of Shapely for all supported Python version. Shapely v1 will not build
+        # on Python >= 3.12 so we exclude that from our testing.
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        shapely-version: ["1.*", "2.*"]
+        exclude:
+          - python-version: "3.12"
+            shapely-version: "1.*"
+          - python-version: "3.13"
+            shapely-version: "1.*"
 
     steps:
     - uses: actions/checkout@v2
@@ -26,11 +34,14 @@ jobs:
     - name: Install OS dependencies
       run: |
         sudo apt-get install -y libgeos-dev
+    - name: Enforce Shapely constraints
+      run: |
+        echo "shapely == {{ matrix.shapely-version }}" | tee > constraints.txt
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install -r requirements.txt -c constraints.txt
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
