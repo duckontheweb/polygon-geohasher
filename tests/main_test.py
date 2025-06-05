@@ -1,7 +1,7 @@
 import unittest
 import warnings
 
-from polygon_geohasher.polygon_geohasher import (
+from polygon_geohasher import (
     polygon_to_geohashes,
     geohash_to_polygon,
     geohashes_to_polygon,
