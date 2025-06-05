@@ -45,7 +45,7 @@ pip (8+):
 Here are some simple examples:
 
 ```python
-from polygon_geohasher.polygon_geohasher import polygon_to_geohashes, geohashes_to_polygon
+from polygon_geohasher import polygon_to_geohashes, geohashes_to_polygon
 from shapely import geometry
 
 polygon = geometry.Polygon([(-99.1795917, 19.432134), (-99.1656847, 19.429034),
