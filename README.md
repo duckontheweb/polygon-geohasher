@@ -22,8 +22,18 @@ inside a polygon or geohashes that touch (intersect) the polygon. This library u
 ## Requirements
 Polygon Geohasher requires:
 
-- Python >= 3.x.
+- Python >= 3.9, < 3.14.
 - GEOS >= 3.3 (due to shapely).
+
+### Supported Python & Shapely Versions
+
+| Python Version | Shapely 1          | Shapely 2          |
+|----------------|--------------------|--------------------|
+| 3.9            | :heavy_check_mark: | :heavy_check_mark: |
+| 3.10           | :heavy_check_mark: | :heavy_check_mark: |
+| 3.11           | :heavy_check_mark: | :heavy_check_mark: |
+| 3.12           | :x:                | :heavy_check_mark: |
+| 3.13           | :x:                | :heavy_check_mark: |
 
 ## Installing
 Linux users can get Polygon Geohasher from the Python Package Index with
