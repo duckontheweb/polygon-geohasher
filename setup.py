@@ -1,28 +1,18 @@
-import re
 from setuptools import setup, find_packages
 
 
-# Get version without importing, which avoids dependency issues
-def get_version():
-    with open("polygon_geohasher/version.py") as version_file:
-        return re.search(
-            r"""__version__\s+=\s+(['"])(?P<version>.+?)\1""", version_file.read()
-        ).group("version")
-
-
-def readme():
+def readme() -> str:
     with open("README.md") as f:
         return f.read()
 
 
-def requirements():
+def requirements() -> str:
     with open("requirements.txt") as f:
         return f.read()
 
 
 setup(
     name="polygon-geohasher-2",
-    version=get_version(),
     author="Alberto Bonsanto; maintained by Jon Duckworth",
     author_email="",
     url="https://github.com/duckontheweb/polygon-geohasher",
@@ -31,6 +21,7 @@ setup(
     long_description_content_type="text/markdown",
     license="MIT",
     packages=find_packages(),
+    package_data={"": ["py.typed"]},
     install_requires=requirements(),
     python_requires=">=3.9,<3.14",
     include_package_data=False,
