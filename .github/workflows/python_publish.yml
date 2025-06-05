@@ -12,20 +12,30 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    environment:
+      name: pypi
+      url: https://pypi.org/p/polygon-geohasher-2
+
+    permissions:
+      id-token: write
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
         python-version: '3.x'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install setuptools wheel twine
-    - name: Build and publish
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+
+    - name: Build
       run: |
         python setup.py sdist bdist_wheel
-        twine upload dist/*
+        
+    - name: Publish
+      uses: pypa/gh-action-pypi-publish@release/v1
+        
