@@ -92,6 +92,12 @@ To run the tests:
 $ pytest
 ```
 
+To run the linter:
+
+```console
+flake8 .
+```
+
 ### Type Checking
 
 This project uses `mypy` to check type annotations. Please run the following command prior
